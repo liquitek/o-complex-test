@@ -53,8 +53,8 @@ const ProductList = ({initialData}) => {
 
     const handleSubmitOrder = () => {
         // Проверка наличия номера телефона
-        if (!phone.trim()) {
-            setError('Введите номер телефона');
+        if (!phone.trim()||phone.length!=11||phone[0]!=7) {
+            setError('Номер телефона должен быть 11-ти значный и начинаться с цифры 7')
             return;
         }
         // Отправка заказа
